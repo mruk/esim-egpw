@@ -49,20 +49,20 @@ ON Players.nr = Auctions.nr_top_bidder
 WHERE Auctions.unix > strftime('%s','now','start of month')
 GROUP BY Auctions.nr_top_bidder ORDER BY sell_total_value DESC;
 
--- named TOP10 Best Sellers in current month sorted by Total Gold Gain:
+-- named TOP10 Best Sellers in current year sorted by Total Gold Gain:
 SELECT Players.nr, Players.name, sum(Auctions.sell_price) AS sell_total_value
 FROM Auctions INNER JOIN Players
 ON Players.nr = Auctions.nr_issuer
-WHERE (Auctions.unix > strftime('%s','now','start of month') AND Auctions.nr_top_bidder IS NOT NULL)
-GROUP BY Auctions.nr_top_bidder ORDER BY sell_total_value DESC
+WHERE (Auctions.unix > strftime('%s','now','start of year') AND Auctions.nr_top_bidder IS NOT NULL)
+GROUP BY Auctions.nr_issuer ORDER BY sell_total_value DESC
 LIMIT 10;
 
--- named TOP Best Sellers in current month sorted by Auctions amount, Total Gold Gain (just for ref):
+-- named TOP Best Sellers in current year sorted by Auctions amount, Total Gold Gain (just for ref):
 SELECT count(*) AS auctions_amount, Players.name, sum(Auctions.sell_price) AS sell_total_value
 FROM Auctions INNER JOIN Players
 ON Players.nr = Auctions.nr_issuer
-WHERE (Auctions.unix > strftime('%s','now','start of month') AND Auctions.nr_top_bidder IS NOT NULL)
-GROUP BY Auctions.nr_top_bidder ORDER BY auctions_amount DESC;
+WHERE (Auctions.unix > strftime('%s','now','start of year') AND Auctions.nr_top_bidder IS NOT NULL)
+GROUP BY Players.nr ORDER BY auctions_amount DESC;
 
 -- total Market Gold circulation in current month:
 SELECT sum(Auctions.sell_price) AS total_circulation

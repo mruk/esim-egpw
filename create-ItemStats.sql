@@ -11,7 +11,7 @@ type TEXT NOT NULL UNIQUE);
 
 INSERT OR IGNORE INTO ItemStats (nr, type)
  VALUES
-  (1, 'Miss chance reduction'),
+  (1, 'Reduce miss chance'),
   (2, 'Increase critical chance'),
   (3, 'Increase maximum damage'),
   (4, 'Increase damage'),
