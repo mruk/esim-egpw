@@ -21,6 +21,7 @@ FOREIGN KEY(stat_b) REFERENCES ItemStats(nr)
 
 INSERT OR REPLACE INTO Items
 (nr, type, q, stat_a, stat_b, stat_a_value, stat_b_value) VALUES
+ (4713037, 3, 5, 4, 4, 5.92, 4.90),
  (5160938, 4, 4, 5, 4, 3.64, 3.42),
  (5164780, 2, 2, 7, 7, 46, 47),
  (5164848, 2, 1, 3, 1, 0.59, 0.65),

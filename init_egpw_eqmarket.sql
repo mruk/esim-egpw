@@ -1,6 +1,8 @@
 /*
 ** SQLite
 ** model initialization
+** for data import:
+**  https://sqlite.org/cli.html#csv_import
 */
 
 .print "EGPW AUCTION MARKET INIT START";

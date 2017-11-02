@@ -18,6 +18,7 @@ INSERT OR REPLACE INTO Players (nr, name)
  (257416, 'Item vendor'),
  (342870, 'ExSPer'),
  (363449, 'SHlaotan'),
+ (553147, 'daviportela98'),
  (672164, 'Xsaris'),
  (745992, 'aljosa2323'),
  (768520, 'genlis'),
